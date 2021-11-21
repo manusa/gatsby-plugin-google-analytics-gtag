@@ -1,0 +1,10 @@
+.idea/
+node_modules/
+public/
+.cache/
+
+# IntelliJ
+.idea
+*.ipr
+*.iml
+*.iws
