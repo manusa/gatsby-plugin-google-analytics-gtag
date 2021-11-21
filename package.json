@@ -9,6 +9,12 @@
     "name": "Marc Nuri",
     "url": "https://blog.marcnuri.com"
   },
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "google gtag",
+    "google analytics cookieless"
+  ],
   "license": "Apache-2.0",
   "licenses": [
     {
