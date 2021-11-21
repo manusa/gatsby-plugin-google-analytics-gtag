@@ -18,6 +18,8 @@ jobs:
           node-version: '14.x'
       - name: Install
         run: npm install
+      - name: Build
+        run: npm run build
       - name: Change Package version
         run: ./utils/version-from-tag.js
       - name: Publish
