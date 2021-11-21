@@ -1,0 +1,32 @@
+{
+  "name": "gatsby-plugin-google-analytics-gtag",
+  "description": "Plugin to use Google Analytics (gtag.js) without cookies",
+  "version": "0.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": {
+    "name": "Marc Nuri",
+    "url": "https://blog.marcnuri.com"
+  },
+  "license": "Apache-2.0",
+  "licenses": [
+    {
+      "type": "Apache-2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manusa/gatsby-plugin-google-analytics-gtag.git"
+  },
+  "bugs": {
+    "url": "https://github.com/manusa/gatsby-plugin-google-analytics-gtag/issues"
+  },
+  "homepage": "https://github.com/manusa/gatsby-plugin-google-analytics-gtag#readme",
+  "peerDependencies": {
+    "gatsby": "^4.2.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
