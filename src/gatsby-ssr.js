@@ -28,7 +28,7 @@ export const onRenderBody = ({
   const inlineScripts = [];
   inlineScripts.push(<script key='gtag' async src={`https://www.googletagmanager.com/gtag/js?id=${trackingId}`} />);
   // Page views sent manually, check gatsby-browser.js
-  inlineScripts.push(<script key='gtag-gatsby' dangerouslySetInnerHTML={{__html: `debugger;
+  inlineScripts.push(<script key='gtag-gatsby' dangerouslySetInnerHTML={{__html: `
     const GA_CLIENT_ID_KEY = 'ga:clientId';
     window.dataLayer = window.dataLayer || [];
     function gtag(){window.dataLayer.push(arguments);}
