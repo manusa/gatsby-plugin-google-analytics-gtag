@@ -59,7 +59,8 @@ describe('gatsby-ssr test suite', () => {
       gatsbySsr.onRenderBody({setHeadComponents, setPostBodyComponents}, {trackingId: 'UA-1337'});
       // Then
       expect(setPostBodyComponents.mock.calls[0][0][1].props.dangerouslySetInnerHTML.__html)
-        .toMatch(/[\s\S]*gtag\('js', new Date\(\)\);[\s\S]*gtag\('config', 'UA-1337', {[\s\S]*/);
+        // eslint-disable-next-line max-len
+        .toMatch(/[\s\S]*gtag\('js', new Date\(\)\);[\s\S]*gtag\('consent', 'default', {[\s\S]*gtag\('config', 'UA-1337', {[\s\S]*/);
     });
   });
 });

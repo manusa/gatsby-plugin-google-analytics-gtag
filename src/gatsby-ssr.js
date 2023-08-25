@@ -49,10 +49,13 @@ export const onRenderBody = ({
       effectiveClientId = uuid;
     }
     gtag('js', new Date());
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      analytics_storage: 'denied'
+    });
     gtag('config', '${trackingId}', {
       send_page_view: false,
       client_storage: 'none',
-      analytics_storage: 'denied',
       client_id: effectiveClientId
     });
   `}}/>);
