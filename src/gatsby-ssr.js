@@ -52,6 +52,7 @@ export const onRenderBody = ({
     gtag('config', '${trackingId}', {
       send_page_view: false,
       client_storage: 'none',
+      analytics_storage: 'denied',
       client_id: effectiveClientId
     });
   `}}/>);
