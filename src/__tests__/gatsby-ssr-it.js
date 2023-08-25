@@ -92,7 +92,7 @@ describe('gatsby-ssr integration test suite', () => {
         const $evaluatedScript = document.createElement('script');
         $evaluatedScript.innerHTML = $script.innerHTML;
         document.body.append($evaluatedScript);
-        expect(window.dataLayer).toHaveLength(2);
+        expect(window.dataLayer).toHaveLength(3);
       });
     });
   });
