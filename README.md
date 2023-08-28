@@ -13,8 +13,14 @@ plugins: [
     resolve: 'gatsby-plugin-google-analytics-gtag',
     options: {
       trackingId: 'UA-YOURIDHERE-1',
-      enableSessionStorage: true
+      enableSessionStorage: true,
+      consentMode: 'granted'
     }
   },
 ]
 ```
+
+| Option         | Description                                   | Values                |
+|----------------|-----------------------------------------------|-----------------------|
+| `constentMode` | Allows to specify the default consent options | `denied` or `granted` |
+

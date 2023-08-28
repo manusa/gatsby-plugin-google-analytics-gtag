@@ -7,6 +7,7 @@ export const onRenderBody = ({
   trackingId,
   enableLocalStorage = false,
   enableSessionStorage = false,
+  consentMode = 'denied',
   // Required for integration test
   getEnv = () => process.env.NODE_ENV
 }) => {
@@ -48,11 +49,11 @@ export const onRenderBody = ({
     } else {
       effectiveClientId = uuid;
     }
-    gtag('js', new Date());
     gtag('consent', 'default', {
-      ad_storage: 'denied',
-      analytics_storage: 'denied'
+      ad_storage: '${consentMode}',
+      analytics_storage: '${consentMode}'
     });
+    gtag('js', new Date());
     gtag('config', '${trackingId}', {
       send_page_view: false,
       client_storage: 'none',
