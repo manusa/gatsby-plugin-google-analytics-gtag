@@ -1,36 +1,35 @@
 import React from 'react';
 
 export const onRenderBody = ({
-	setHeadComponents,
-	setPostBodyComponents
+  setHeadComponents,
+  setPostBodyComponents
 }, {
-	trackingId,
-	enableLocalStorage = false,
-	enableSessionStorage = false,
-	consentMode = 'denied',
-	// Required for integration test
-	getEnv = () => process.env.NODE_ENV
+  trackingId,
+  enableLocalStorage = false,
+  enableSessionStorage = false,
+  consentMode = 'denied',
+  // Required for integration test
+  getEnv = () => process.env.NODE_ENV
 }) => {
-	if (getEnv() !== 'production' || !trackingId) {
-		return null;
-	}
-	setHeadComponents([
-		<link
-			rel='preconnect'
-			key='preconnect-google-gtag'
-			href='https://www.googletagmanager.com'
-		/>,
-		<link
-			rel='dns-prefetch'
-			key='dns-prefetch-google-gtag'
-			href='https://www.googletagmanager.com'
-		/>
-	]);
-	const inlineScripts = [];
-	inlineScripts.push(<script key='gtag' async src={`https://www.googletagmanager.com/gtag/js?id=${trackingId}`} />);
-	// Page views sent manually, check gatsby-browser.js
-	inlineScripts.push(<script key='gtag-gatsby' dangerouslySetInnerHTML={{
-		__html: `
+  if (getEnv() !== 'production' || !trackingId) {
+    return null;
+  }
+  setHeadComponents([
+    <link
+      rel='preconnect'
+      key='preconnect-google-gtag'
+      href='https://www.googletagmanager.com'
+    />,
+    <link
+      rel='dns-prefetch'
+      key='dns-prefetch-google-gtag'
+      href='https://www.googletagmanager.com'
+    />
+  ]);
+  const inlineScripts = [];
+  inlineScripts.push(<script key='gtag' async src={`https://www.googletagmanager.com/gtag/js?id=${trackingId}`} />);
+  // Page views sent manually, check gatsby-browser.js
+  inlineScripts.push(<script key='gtag-gatsby' dangerouslySetInnerHTML={{__html: `
     const GA_CLIENT_ID_KEY = 'ga:clientId';
     window.dataLayer = window.dataLayer || [];
     function gtag(){window.dataLayer.push(arguments);}
@@ -52,9 +51,9 @@ export const onRenderBody = ({
     }
     gtag('consent', 'default', {
       ad_storage: '${consentMode}',
-	  ad_user_data: '${consentMode}',
-	  ad_personalization: '${consentMode}',
-	  analytics_storage: '${consentMode}'
+      ad_user_data: '${consentMode}',
+      ad_personalization: '${consentMode}',
+      analytics_storage: '${consentMode}',
     });
     gtag('js', new Date());
     gtag('config', '${trackingId}', {
@@ -62,6 +61,6 @@ export const onRenderBody = ({
       client_storage: 'none',
       client_id: effectiveClientId
     });
-  `}} />);
-	return setPostBodyComponents(inlineScripts);
+  `}}/>);
+  return setPostBodyComponents(inlineScripts);
 };
