@@ -51,7 +51,9 @@ export const onRenderBody = ({
     }
     gtag('consent', 'default', {
       ad_storage: '${consentMode}',
-      analytics_storage: '${consentMode}'
+      ad_user_data: '${consentMode}',
+      ad_personalization: '${consentMode}',
+      analytics_storage: '${consentMode}',
     });
     gtag('js', new Date());
     gtag('config', '${trackingId}', {
